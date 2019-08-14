@@ -9,23 +9,36 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      selectedFolder: '',
+      selectedFolder: '', //b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1
       selectedNote: '',
       allFolders: STORE.folders,
       allNotes: STORE.notes,
     }
   }
+
+  setSelected(selected){
+    this.setState({
+      selectedFolder: selected
+    });
+  }
+
   render(){
     return (
       <div className="App">
         <Header />
         <div className="sidebar">
-          <Route exact path='/' render={() => <Sidebar folders={this.state.allFolders} />} />
-          <Route exact path='/folder/:folderId' render={() => <Sidebar folders={this.state.allFolders} selected={this.state.selectedFolder}/>} />
+          <Sidebar 
+            folders={this.state.allFolders} 
+            clickHandler={selected => this.setSelected(selected)}/>
         </div>
         <main>
           <div className="notes">
-            <Route exact path="/" component={Notes} />
+            <Route exact path="/" render={() => 
+              <Notes 
+                selected={this.state.selectedFolder} />} />
+            <Route path="/folder/:folderId" render={() => 
+              <Notes 
+                selected={this.state.selectedFolder} />} />
           </div>
         </main>
       </div>
@@ -35,3 +48,5 @@ class App extends React.Component {
 
 export default App;
           
+    //      <Route path='/folder/:folderId' render={() => <Sidebar folders={this.state.allFolders} selected={this.state.selectedFolder}/>} />
+//          <Route exact path='/' render={() => <Sidebar folders={this.state.allFolders} />} />

@@ -1,0 +1,7 @@
+.active{
+    background-color: lightcoral;
+} 
+
+.sidebar a{
+    display: block;
+}
