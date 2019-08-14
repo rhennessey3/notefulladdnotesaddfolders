@@ -1,4 +1,14 @@
-.active{
+.sidebar{
+    width: 30%;
+}
+
+/*link styling*/
+a {
+    padding: 20px;
+    margin: 5px;
+}
+
+.sidebar .active{
     background-color: lightcoral;
 } 
 
