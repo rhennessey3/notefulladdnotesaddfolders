@@ -33,12 +33,8 @@ class App extends React.Component {
         </div>
         <main>
           <div className="notes">
-            <Route exact path="/" render={() => 
-              <Notes 
-                selected={this.state.selectedFolder} />} />
-            <Route path="/folder/:folderId" render={() => 
-              <Notes 
-                selected={this.state.selectedFolder} />} />
+            <Route exact path="/" component={Notes} />
+            <Route path="/folder/:folderId" component={Notes} />
           </div>
         </main>
       </div>
@@ -50,3 +46,9 @@ export default App;
           
     //      <Route path='/folder/:folderId' render={() => <Sidebar folders={this.state.allFolders} selected={this.state.selectedFolder}/>} />
 //          <Route exact path='/' render={() => <Sidebar folders={this.state.allFolders} />} />
+/*           <Route exact path="/" render={() => 
+              <Notes 
+                selected={this.state.selectedFolder} />} />
+            <Route path="/folder/:folderId" render={() => 
+              <Notes 
+                selected={this.state.selectedFolder} />} />*/

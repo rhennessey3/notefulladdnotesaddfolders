@@ -21,6 +21,7 @@ export default class Sidebar extends React.Component{
                     onClick={this.handleClick}                        
                     to={`/folder/${folder.id}`}>
                         {folder.name}
+                        
                 </NavLink>);
             
         return(
