@@ -9,7 +9,7 @@ export default class SidebarNoteDetails extends React.Component{
 
         return(
             <div className="sidebar">
-                <NavLink to="/">Go Back</NavLink>
+                <NavLink id="back__button" to="/">Go Back</NavLink>
                 <p>{folderName}</p>
             </div>
         )
