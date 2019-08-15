@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Notes.css';
 
 export default class Notes extends React.Component{
     render(){

@@ -1,17 +1,28 @@
 .sidebar{
-    width: 30%;
+    min-width: 35%;
+    background-color: #ffcdbf;
+    min-height: 1000px;
 }
 
 /*link styling*/
-a {
-    padding: 20px;
-    margin: 5px;
-}
-
 .sidebar .active{
     background-color: lightcoral;
 } 
 
-.sidebar a{
+.sidebar a, .sidebar p{
     display: block;
+    padding: 20px 0px 20px 20px;
+    margin: 5px;
+    font-size: 1.4em;
+    text-decoration: none;
+}
+
+svg{
+    padding-right: 5px;
+}
+
+@media screen and (min-width: 800px){
+    .sidebar{
+        min-width: 300px;
+    }
 }

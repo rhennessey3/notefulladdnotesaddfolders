@@ -1,3 +1,7 @@
-#back__button{
-    background-color: rgb(36, 34, 34);
+#back__link{
+    background-color: #fffefb;
 } 
+
+.sidebar p{
+    font-family: 'Fresca', sans-serif;
+}

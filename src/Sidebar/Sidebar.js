@@ -1,6 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
+import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default class Sidebar extends React.Component{
     constructor(props){
@@ -20,6 +23,7 @@ export default class Sidebar extends React.Component{
                     id={folder.id}
                     onClick={this.handleClick}                        
                     to={`/folder/${folder.id}`}>
+                        <FontAwesomeIcon icon={faFolderOpen}/>
                         {folder.name}
                 </NavLink>);
                 
