@@ -22,8 +22,8 @@ export default class Sidebar extends React.Component{
                     to={`/folder/${folder.id}`}>
                         {folder.name}
                 </NavLink>);
-        console.log(this.props.folders);
-        return(
+                
+         return(
             <div className="sidebar">
                 {folderDisplay}
             </div>

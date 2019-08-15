@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      selectedFolder: '', //b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1
+      selectedFolder: '',
       selectedNote: '',
       allFolders: STORE.folders,
       allNotes: STORE.notes,
@@ -27,36 +27,56 @@ class App extends React.Component {
 
   render(){
     return (
-      <div className="App">
-        <Header />
-        <main>
-         <Route exact path ="/" render={ () => <Sidebar 
-            folders={this.state.allFolders} 
-            clickHandler={selected => this.setSelected(selected)}/>} />
-          <Route path ="/folder" render={ () => <Sidebar 
-            folders={this.state.allFolders} 
-            clickHandler={selected => this.setSelected(selected)}/>} />
-            <Route path ="/note/:noteId" 
-              render={ (routerProps) => <SidebarNoteDetails 
-                notes={this.state.allNotes} 
-                folders={this.state.allFolders}
-                noteId={routerProps.match.params.noteId}/>} />
-          <Route exact path="/" component={Notes} />
-          <Route path="/folder/:folderId" component={Notes} />
-          <Route path="/note/:noteId" component={NoteDetails} />
-        </main>
-      </div>
+    <div className="App">
+      <Header />
+      <main>
+        <Route exact path ="/" 
+               render={ () => 
+               <Sidebar 
+                  folders={this.state.allFolders} 
+                  clickHandler={selected => this.setSelected(selected)}
+                />} 
+        />
+        <Route path ="/folder" 
+               render={ () =>
+               <Sidebar 
+                  folders={this.state.allFolders} 
+                  clickHandler={selected => this.setSelected(selected)}
+                />} 
+        />
+        <Route path ="/note/:noteId" 
+               render={ (routerProps) => 
+               <SidebarNoteDetails 
+                  notes={this.state.allNotes} 
+                  folders={this.state.allFolders}
+                  noteId={routerProps.match.params.noteId}
+                />} 
+        />
+        <Route exact path="/" 
+               render={ (routerProps) =>
+               <Notes 
+                  notes={this.state.allNotes}
+                  folderId={routerProps.match.params.folderId}
+                />}
+        />
+        <Route path="/folder/:folderId" 
+               render={ (routerProps) =>
+               <Notes 
+                  notes={this.state.allNotes}
+                  folderId={routerProps.match.params.folderId}
+                />}
+        />
+        <Route path="/note/:noteId" 
+               render={(routerProps) => 
+               <NoteDetails 
+                  notes={this.state.allNotes}
+                  noteId={routerProps.match.params.noteId}
+                />} 
+        />
+      </main>
+    </div>
     );
   }
 }
 
 export default App;
-          
-    //      <Route path='/folder/:folderId' render={() => <Sidebar folders={this.state.allFolders} selected={this.state.selectedFolder}/>} />
-//          <Route exact path='/' render={() => <Sidebar folders={this.state.allFolders} />} />
-/*           <Route exact path="/" render={() => 
-              <Notes 
-                selected={this.state.selectedFolder} />} />
-            <Route path="/folder/:folderId" render={() => 
-              <Notes 
-                selected={this.state.selectedFolder} />} />*/

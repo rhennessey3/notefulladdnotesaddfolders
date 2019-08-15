@@ -1,13 +1,11 @@
 import React from 'react';
-import STORE from '../dummy-store.js';
 import { NavLink } from 'react-router-dom';
-import NoteDetails from '../NoteDetails/NoteDetails';
 
-export default function Notes(props){
-    const folderSelected = props.match.params.folderId;
-    let notes = (folderSelected
-            ? STORE.notes.filter(note => note.folderId === folderSelected)
-            : STORE.notes)
+export default class Notes extends React.Component{
+    render(){
+        const notes = (this.props.folderId
+            ? this.props.notes.filter(note => note.folderId === this.props.folderId)
+            : this.props.notes)
                 .map(note => (<div className="note__overview" key={note.id}>
                     <NavLink to={`/note/${note.id}`}>
                         <h3>{note.name}</h3>
@@ -21,3 +19,4 @@ export default function Notes(props){
             </div>
         );
     }
+}

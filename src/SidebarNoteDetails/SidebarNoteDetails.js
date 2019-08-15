@@ -6,7 +6,6 @@ export default class SidebarNoteDetails extends React.Component{
     render(){
         const folderId = this.props.notes.find(note => note.id === this.props.noteId).folderId;
         const folderName = this.props.folders.find(folder => folder.id === folderId).name;
-        console.log(folderName);
 
         return(
             <div className="sidebar">
