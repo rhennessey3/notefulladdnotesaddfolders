@@ -1,6 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Notes.css';
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default class Notes extends React.Component{
     render(){
@@ -12,11 +16,16 @@ export default class Notes extends React.Component{
                         <h3>{note.name}</h3>
                     </NavLink>
                     <p>Date Modified: {note.modified}</p>
+                    <h4><FontAwesomeIcon icon={faTrashAlt} />Delete Note</h4>
                 </div>));
 
         return(
-            <div className="notes__list">
-                {notes}
+            <div className="note__container">
+                <div className="note__list">
+                    {notes}
+                    <br/>
+                </div>
+                <h3 className="add__note"><FontAwesomeIcon icon={faPlusSquare} />Add Note</h3>
             </div>
         );
     }

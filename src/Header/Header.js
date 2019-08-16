@@ -7,7 +7,7 @@ export default class Header extends React.Component{
         return(
             <header>
                 <NavLink to="/">
-                    <h2>noteful</h2>
+                    <h2>Noteful</h2>
                 </NavLink>
             </header>
         )

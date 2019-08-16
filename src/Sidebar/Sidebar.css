@@ -4,9 +4,9 @@
     min-height: 1000px;
 }
 
-/*link styling*/
 .sidebar .active{
     background-color: lightcoral;
+    margin: 0;
 } 
 
 .sidebar a, .sidebar p{
@@ -18,7 +18,7 @@
 }
 
 svg{
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 @media screen and (min-width: 800px){

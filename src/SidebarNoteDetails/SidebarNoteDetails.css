@@ -1,7 +1,9 @@
 #back__link{
-    background-color: #fffefb;
+    background-color: #ffcdbf;
 } 
 
 .sidebar p{
     font-family: 'Fresca', sans-serif;
+    background-color: lightcoral;
+    margin: 0;
 }

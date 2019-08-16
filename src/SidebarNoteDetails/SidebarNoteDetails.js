@@ -13,8 +13,8 @@ export default class SidebarNoteDetails extends React.Component{
 
         return(
             <div className="sidebar">
-                <NavLink id="back__link" to="/"><FontAwesomeIcon icon={faArrowAltCircleLeft} />Go Back</NavLink>
                 <p><FontAwesomeIcon icon={faFolderOpen} />{folderName}</p>
+                <NavLink id="back__link" to="/"><FontAwesomeIcon icon={faArrowAltCircleLeft} />Go Back</NavLink>
             </div>
         )
     }
