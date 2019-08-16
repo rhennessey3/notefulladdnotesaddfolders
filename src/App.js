@@ -5,8 +5,8 @@ import Notes from './Notes/Notes';
 import NoteDetails from './NoteDetails/NoteDetails';
 import SidebarNoteDetails from './SidebarNoteDetails/SidebarNoteDetails';
 import { Route } from 'react-router-dom';
-import STORE from './dummy-store.js';
 import './App.css';
+import config from './config';
 
 class App extends React.Component {
   constructor(props){
@@ -16,6 +16,7 @@ class App extends React.Component {
       selectedNote: '',
       allFolders: STORE.folders,
       allNotes: STORE.notes,
+      error: '',
     }
   }
 
@@ -24,6 +25,46 @@ class App extends React.Component {
       selectedFolder: selected
     });
   }
+
+  setNotes(notes){
+    this.setState({
+      allNotes: notes
+    })
+  }
+
+  setFolders(folders){
+    this.setState({
+      allFolders: folders
+    })
+  }
+
+  setError(error){
+    this.setState({
+      error: error
+    })
+  }
+
+  componentDidMount() {
+    Promise.all([
+        fetch(`${config.NOTE_ENDPOINT}`),
+        fetch(`${config.FOLDER_ENDPOINT}`)
+    ])
+        .then(([notesRes, foldersRes]) => {
+            if (!notesRes.ok)
+                return notesRes.json().then(e => Promise.reject(e));
+            if (!foldersRes.ok)
+                return foldersRes.json().then(e => Promise.reject(e));
+
+            return Promise.all([notesRes.json(), foldersRes.json()]);
+        })
+        .then(([notes, folders]) => {
+            this.setNotes(notes);
+            this.setFolders(folders);
+        })
+        .catch(error => {
+            this.setError(error);
+        });
+    }
 
   render(){
     return (

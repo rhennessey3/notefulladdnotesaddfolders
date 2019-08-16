@@ -23,7 +23,6 @@ export default class Notes extends React.Component{
             <div className="note__container">
                 <div className="note__list">
                     {notes}
-                    <br/>
                 </div>
                 <h3 className="add__note"><FontAwesomeIcon icon={faPlusSquare} />Add Note</h3>
             </div>
