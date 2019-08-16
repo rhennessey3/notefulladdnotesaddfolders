@@ -14,8 +14,8 @@ class App extends React.Component {
     this.state = {
       selectedFolder: '',
       selectedNote: '',
-      allFolders: STORE.folders,
-      allNotes: STORE.notes,
+      allFolders: [],
+      allNotes: [],
       error: '',
     }
   }
