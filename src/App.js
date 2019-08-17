@@ -98,6 +98,7 @@ class App extends React.Component {
                <Notes 
                   notes={this.state.allNotes}
                   folderId={routerProps.match.params.folderId}
+                  deleteHandler={notes => this.setNotes(notes)}
                 />}
         />
         <Route path="/folder/:folderId" 
@@ -105,6 +106,7 @@ class App extends React.Component {
                <Notes 
                   notes={this.state.allNotes}
                   folderId={routerProps.match.params.folderId}
+                  deleteHandler={notes => this.setNotes(notes)}
                 />}
         />
         <Route path="/note/:noteId" 
@@ -112,6 +114,7 @@ class App extends React.Component {
                <NoteDetails 
                   notes={this.state.allNotes}
                   noteId={routerProps.match.params.noteId}
+                  deleteHandler={notes => this.setNotes(notes)}
                 />} 
         />
       </main>
