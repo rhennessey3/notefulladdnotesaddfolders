@@ -66,6 +66,7 @@ export default class AddFolder extends React.Component{
                     </div>
 
                     <p>* required field</p>
+                    
                 </form>
             </div>
         )

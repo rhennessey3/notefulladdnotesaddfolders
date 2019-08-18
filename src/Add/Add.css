@@ -18,9 +18,17 @@
     display: block;
 }
 
-.popup__form input{
+.popup__form input, .popup__form select{
     font-size: 1em;
     margin: 5px 0px 0px 15px;
+}
+
+.popup__form select{
+    width: 84%;
+}
+
+.popup__form input{
+    padding: 5px;
 }
 
 .popup__form .buttons{

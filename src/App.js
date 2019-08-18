@@ -150,7 +150,9 @@ class App extends React.Component {
         {this.state.showAddNote
          ? <AddNote
             addNoteHandler={() => this.setNoteAdd()}
-            />
+            allFolders={this.state.allFolders}
+            selectedFolder={this.state.selectedFolder}
+           />
          : ''}
 
       </main>

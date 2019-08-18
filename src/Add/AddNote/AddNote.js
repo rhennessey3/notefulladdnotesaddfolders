@@ -54,6 +54,13 @@ export default class AddNote extends React.Component{
     render(){
         const hasNoteError = this.validateForm() ? true : false;
 
+        const firstFolder = this.props.selectedFolder 
+            ? this.props.allFolders.find(folder => folder.id === this.props.selectedFolder)
+            : this.props.allFolders[0]
+        const remainingFolderOptions = this.props.allFolders
+            .filter(folder => folder.id !== firstFolder.id)
+            .map(folder => <option key={folder.id}>{folder.name}</option>)
+
         return(
             <div className="popup__form">
                 <form className="add__item" id="addNote" onSubmit={e => this.handleSubmit(e)}>
@@ -64,6 +71,13 @@ export default class AddNote extends React.Component{
                     
                     <label htmlFor="noteContent">Content: 
                         <input type="textarea" name="noteContent" id="noteContents" onChange={e => this.handleNoteContent(e)} />
+                    </label>
+
+                    <label htmlFor="folders">Folder: 
+                        <select name="folders">
+                            <option key={firstFolder.id}>{firstFolder.name}</option>
+                            {remainingFolderOptions}
+                        </select>
                     </label>
 
                     <div className="buttons">
