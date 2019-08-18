@@ -57,6 +57,13 @@ class App extends React.Component {
     })
   }
 
+  setNoteAdd(){
+    const toggle = this.state.showAddNote ? false : true;
+    this.setState({
+      showAddNote: toggle
+    })
+  }
+
   componentDidMount() {
     Promise.all([
         fetch(`${config.NOTE_ENDPOINT}`),
@@ -114,6 +121,7 @@ class App extends React.Component {
                   notes={this.state.allNotes}
                   folderId={routerProps.match.params.folderId}
                   deleteHandler={notes => this.setNotes(notes)}
+                  addNoteHandler={() => this.setNoteAdd()}
                 />}
         />
         <Route path="/folder/:folderId" 
@@ -122,6 +130,7 @@ class App extends React.Component {
                   notes={this.state.allNotes}
                   folderId={routerProps.match.params.folderId}
                   deleteHandler={notes => this.setNotes(notes)}
+                  addNoteHandler={() => this.setNoteAdd()}
                 />}
         />
         <Route path="/note/:noteId" 
@@ -137,6 +146,13 @@ class App extends React.Component {
              addClickHandler={() => this.setFolderAdd()}
             /> 
           : ''}
+
+        {this.state.showAddNote
+         ? <AddNote
+            addNoteHandler={() => this.setNoteAdd()}
+            />
+         : ''}
+
       </main>
     </div>
     );

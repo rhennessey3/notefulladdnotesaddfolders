@@ -37,7 +37,10 @@ export default class Sidebar extends React.Component{
          return(
             <div className="sidebar">
                 {folderDisplay}
-                <button onClick={this.handleAddClick}><FontAwesomeIcon icon={faFolderPlus}/>Add Folder</button>
+                <button onClick={this.handleAddClick}>
+                    <FontAwesomeIcon icon={faFolderPlus}/>
+                    Add Folder
+                </button>
             </div>
         );
     }

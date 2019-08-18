@@ -36,16 +36,18 @@
 }
 
 .add__note{
-    margin-top: 20px;
+    margin: 10px 0px 10px 20px;
     background-color: #998071;
     border: none;
-    margin-left: 40px;
     font-size: 1.5em;
+    width: 200px;
+    padding: 20px 20px 20px 0px;
 }
 
-.add__note button:hover{
+.add__note:hover{
     color: black;
     transition: 0.5s;
+    background-color: #79665b;
 }
 
 button{

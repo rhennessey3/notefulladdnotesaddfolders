@@ -10,7 +10,6 @@ export default class AddFolder extends React.Component{
         super(props);
         this.state = {
             newFolder: "",
-            touched: false,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleAddClick = this.handleAddClick.bind(this);
@@ -20,18 +19,16 @@ export default class AddFolder extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         console.log(e);
-        this.setState({
-            touched: true,
-        })
+
         const userFolder = this.state.newFolder;
-        /*need to do this only if name is valid */
+
         fetch(config.FOLDER_ENDPOINT, {
             method: 'POST',
             body: {name: userFolder},
         })
         .then(response => console.log(response.json()))
         .catch(error => console.log(error));
-        {this.handleAddClick()};
+        this.handleAddClick();
     }
 
     /*make sure user has entered value for folder before submitting */
@@ -54,7 +51,7 @@ export default class AddFolder extends React.Component{
     }
 
     render(){
-        const folderError = this.validateForm();
+        const hasFolderError = this.validateForm() ? true : false;
 
         return(
             <div className="popup__form" onSubmit={e => this.handleSubmit(e)}>
@@ -62,11 +59,13 @@ export default class AddFolder extends React.Component{
                     <label htmlFor="folderName">Folder Name*: 
                         <input type="text" name="folderName" id="folderName" onChange={e => this.updateFolder(e)}/>
                     </label>
-                    {this.state.touched && <ValidationError message={folderError} />}
+
                     <div className="buttons">
-                        <button type="submit">Add Folder</button>
+                        <button type="submit" disabled={hasFolderError}>Add Folder</button>
                         <button onClick={this.handleAddClick}>Cancel</button>
                     </div>
+
+                    <p>* required field</p>
                 </form>
             </div>
         )

@@ -13,6 +13,7 @@ export default class Notes extends React.Component{
     constructor(props){
         super(props);
         this.deleteNote = this.deleteNote.bind(this);
+        this.handleAddClick = this.handleAddClick.bind(this);
     }
 
     deleteNote(e){
@@ -33,6 +34,10 @@ export default class Notes extends React.Component{
         .catch(error => console.error(error))
     }
 
+    handleAddClick(){
+        this.props.addNoteHandler();
+    }
+
     render(){
         const notes = (this.props.folderId
             ? this.props.notes.filter(note => note.folderId === this.props.folderId)
@@ -50,7 +55,11 @@ export default class Notes extends React.Component{
                 <div className="note__list">
                     {notes}
                 </div>
-                <button className="add__note"><FontAwesomeIcon icon={faPlusSquare} />Add Note</button>
+                <button className="add__note" 
+                  onClick={this.handleAddClick} >
+                    <FontAwesomeIcon icon={faPlusSquare} />
+                    Add Note
+                </button>
             </div>
         );
     }

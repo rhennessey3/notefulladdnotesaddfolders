@@ -41,3 +41,10 @@
     background-color: lightcoral;
     transition: 0.5s;
 }
+
+.popup__form button:disabled{
+    background: #dddddd;
+    border: 1px solid #dddddd;
+    color: darkgrey;
+    cursor: auto;
+}
