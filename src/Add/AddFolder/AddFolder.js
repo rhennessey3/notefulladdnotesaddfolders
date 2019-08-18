@@ -1,7 +1,9 @@
 import React from 'react';
 
-import '../Add.css';
 import ValidationError from '../ValidationError.js';
+import config from '../../config';
+
+import '../Add.css';
 
 export default class AddFolder extends React.Component{
     constructor(props){
@@ -13,20 +15,24 @@ export default class AddFolder extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    /* posts the folder to the endpoint */
+    /* posts the folder to the endpoint if there's a valid name*/
     handleSubmit(e){
         e.preventDefault();
-        console.log('handling submit');
         this.setState({
             touched: true,
         })
         const userFolder = this.state.newFolder;
-        console.log(userFolder);
+        /*need to do this only if name is valid */
+        fetch(config.FOLDER_ENDPOINT, {
+            method: 'POST',
+            body: {name: userFolder},
+        })
+        .then(response => console.log(response.json()))
+        .catch(error => console.log(error))
     }
 
     /*make sure user has entered value for folder before submitting */
     validateForm(){
-        console.log('validating')
         const folder = this.state.newFolder.trim();
         if(folder.length === 0){
             return 'Please enter a name for your folder.';
@@ -35,7 +41,6 @@ export default class AddFolder extends React.Component{
 
     /*save folder name */
     updateFolder(e){
-        console.log('storing folder data ')
         this.setState({
             newFolder: e.target.value,
         })
