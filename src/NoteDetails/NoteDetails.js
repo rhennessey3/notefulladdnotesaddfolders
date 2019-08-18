@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './NoteDetails.css';
 
 export default class NoteDetails extends React.Component{

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ValidationError from '../ValidationError.js';
 import config from '../../config';
 
 import '../Add.css';

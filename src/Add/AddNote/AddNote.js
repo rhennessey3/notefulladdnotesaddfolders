@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ValidationError from '../ValidationError';
-
 import '../Add.css';
 
 export default class AddNote extends React.Component{

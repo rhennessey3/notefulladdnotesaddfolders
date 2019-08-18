@@ -8,6 +8,8 @@ import NoteDetails from './NoteDetails/NoteDetails';
 import SidebarNoteDetails from './SidebarNoteDetails/SidebarNoteDetails';
 import AddFolder from './Add/AddFolder/AddFolder';
 import AddNote from './Add/AddNote/AddNote';
+import NoteDisplayError from './NoteDisplayError/NoteDisplayError';
+import FolderDisplayError from './FolderDisplayError/FolderDisplayError';
 
 import './App.css';
 import config from './config';
@@ -109,11 +111,15 @@ class App extends React.Component {
         />
         <Route path ="/note/:noteId" 
                render={ (routerProps) => 
-               <SidebarNoteDetails 
-                  notes={this.state.allNotes} 
-                  folders={this.state.allFolders}
-                  noteId={routerProps.match.params.noteId}
-                />} 
+               <FolderDisplayError>
+                  <SidebarNoteDetails 
+                      notes={this.state.allNotes} 
+                      folders={this.state.allFolders}
+                      noteId={routerProps.match.params.noteId}
+                      folderId={this.state.selectedFolder}
+                    />
+                </FolderDisplayError>
+                } 
         />
         <Route exact path="/" 
                render={ (routerProps) =>
@@ -135,11 +141,14 @@ class App extends React.Component {
         />
         <Route path="/note/:noteId" 
                render={(routerProps) => 
-               <NoteDetails 
-                  notes={this.state.allNotes}
-                  noteId={routerProps.match.params.noteId}
-                  deleteHandler={notes => this.setNotes(notes)}
-                />} 
+                <NoteDisplayError>
+                  <NoteDetails 
+                      notes={this.state.allNotes}
+                      noteId={routerProps.match.params.noteId}
+                      deleteHandler={notes => this.setNotes(notes)}
+                    />
+                </NoteDisplayError>
+                } 
         />
         {this.state.showAddFolder
           ? <AddFolder 
