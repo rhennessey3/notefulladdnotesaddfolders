@@ -1,9 +1,11 @@
 import React from 'react';
+
 import { NavLink } from 'react-router-dom';
-import './SidebarNoteDetails.css';
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import './SidebarNoteDetails.css';
 
 export default class SidebarNoteDetails extends React.Component{
     render(){

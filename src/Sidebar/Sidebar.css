@@ -9,12 +9,24 @@
     margin: 0;
 } 
 
-.sidebar a, .sidebar p{
+.sidebar a, .sidebar p, .sidebar button{
     display: block;
     padding: 20px 0px 20px 20px;
     margin: 5px;
     font-size: 1.4em;
     text-decoration: none;
+}
+
+.sidebar button{
+    background-color: #ffcdbf;
+    border: none;
+}
+
+.sidebar a:hover, .sidebar button:hover{
+    background-color: lightcoral;
+    margin: 0;
+    transition: 0.6s;
+    cursor: pointer;
 }
 
 svg{

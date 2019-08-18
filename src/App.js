@@ -1,10 +1,14 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Notes from './Notes/Notes';
 import NoteDetails from './NoteDetails/NoteDetails';
 import SidebarNoteDetails from './SidebarNoteDetails/SidebarNoteDetails';
-import { Route } from 'react-router-dom';
+import AddFolder from './Add/AddFolder/AddFolder';
+import AddNote from './Add/AddNote/AddNote';
+
 import './App.css';
 import config from './config';
 
@@ -17,6 +21,8 @@ class App extends React.Component {
       allFolders: [],
       allNotes: [],
       error: '',
+      showAddFolder: false,
+      showAddNote: false,
     }
   }
 
@@ -42,6 +48,14 @@ class App extends React.Component {
     this.setState({
       error: error
     })
+  }
+
+  setFolderAdd(){
+    const toggle = this.state.showAddFolder ? false : true;
+    this.setState({
+      showAddFolder: toggle
+    })
+    console.log(this.state.showAddFolder);
   }
 
   componentDidMount() {
@@ -75,14 +89,16 @@ class App extends React.Component {
                render={ () => 
                <Sidebar 
                   folders={this.state.allFolders} 
-                  clickHandler={selected => this.setSelected(selected)}
+                  folderClickHandler={selected => this.setSelected(selected)}
+                  addClickHandler={() => this.setFolderAdd()}
                 />} 
         />
         <Route path ="/folder" 
                render={ () =>
                <Sidebar 
                   folders={this.state.allFolders} 
-                  clickHandler={selected => this.setSelected(selected)}
+                  folderClickHandler={selected => this.setSelected(selected)}
+                  addClickHandler={() => this.setFolderAdd()}
                 />} 
         />
         <Route path ="/note/:noteId" 
@@ -117,6 +133,7 @@ class App extends React.Component {
                   deleteHandler={notes => this.setNotes(notes)}
                 />} 
         />
+        {this.state.showAddFolder ? <AddFolder /> : ''}
       </main>
     </div>
     );

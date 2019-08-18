@@ -1,9 +1,12 @@
 import React from 'react';
+
 import { NavLink } from 'react-router-dom';
-import './Notes.css';
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import './Notes.css';
+
 import config from '../config.js';
 
 export default class Notes extends React.Component{

@@ -1,18 +1,25 @@
 import React from 'react';
+
 import { NavLink } from 'react-router-dom';
-import './Sidebar.css';
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import './Sidebar.css';
+
 export default class Sidebar extends React.Component{
     constructor(props){
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        this.handleFolderClick = this.handleFolderClick.bind(this);
+        this.handleAddClick = this.handleAddClick.bind(this);
     }
 
-    handleClick(e){
-        this.props.clickHandler(e.target.id);
+    handleFolderClick(e){
+        this.props.folderClickHandler(e.target.id);
+    }
+
+    handleAddClick(){
+        this.props.addClickHandler();
     }
 
     render(){
@@ -21,7 +28,7 @@ export default class Sidebar extends React.Component{
                 <NavLink 
                     key={folder.id} 
                     id={folder.id}
-                    onClick={this.handleClick}                        
+                    onClick={this.handleFolderClick}                        
                     to={`/folder/${folder.id}`}>
                         <FontAwesomeIcon icon={faFolderOpen}/>
                         {folder.name}
@@ -30,7 +37,7 @@ export default class Sidebar extends React.Component{
          return(
             <div className="sidebar">
                 {folderDisplay}
-                <NavLink><FontAwesomeIcon icon={faFolderPlus}/>Add Folder</NavLink>
+                <button onClick={this.handleAddClick}><FontAwesomeIcon icon={faFolderPlus}/>Add Folder</button>
             </div>
         );
     }

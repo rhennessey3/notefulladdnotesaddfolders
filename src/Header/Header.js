@@ -9,6 +9,7 @@ export default class Header extends React.Component{
                 <NavLink to="/">
                     <h2>Noteful</h2>
                 </NavLink>
+                <p>A place for organizing your notes.</p>
             </header>
         )
     }
