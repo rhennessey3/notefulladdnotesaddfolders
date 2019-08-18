@@ -27,9 +27,7 @@ export default class Notes extends React.Component{
             }
 
             let remainingNotes = this.props.notes;
-            console.log(remainingNotes);
             remainingNotes = this.props.notes.filter(note => note.id !== noteId)
-            console.log(remainingNotes);
             this.props.deleteHandler(remainingNotes);
     })
         .catch(error => console.error(error))
@@ -44,7 +42,7 @@ export default class Notes extends React.Component{
                         <h3>{note.name}</h3>
                     </NavLink>
                     <p>Date Modified: {note.modified}</p>
-                    <h4 id={note.id} onClick={this.deleteNote}><FontAwesomeIcon icon={faTrashAlt} />Delete Note</h4>
+                    <button id={note.id} onClick={this.deleteNote}><FontAwesomeIcon icon={faTrashAlt} />Delete Note</button>
                 </div>));
 
         return(
@@ -52,7 +50,7 @@ export default class Notes extends React.Component{
                 <div className="note__list">
                     {notes}
                 </div>
-                <h3 className="add__note"><FontAwesomeIcon icon={faPlusSquare} />Add Note</h3>
+                <button className="add__note"><FontAwesomeIcon icon={faPlusSquare} />Add Note</button>
             </div>
         );
     }

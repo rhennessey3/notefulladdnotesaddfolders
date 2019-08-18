@@ -55,7 +55,6 @@ class App extends React.Component {
     this.setState({
       showAddFolder: toggle
     })
-    console.log(this.state.showAddFolder);
   }
 
   componentDidMount() {
@@ -133,7 +132,11 @@ class App extends React.Component {
                   deleteHandler={notes => this.setNotes(notes)}
                 />} 
         />
-        {this.state.showAddFolder ? <AddFolder /> : ''}
+        {this.state.showAddFolder
+          ? <AddFolder 
+             addClickHandler={() => this.setFolderAdd()}
+            /> 
+          : ''}
       </main>
     </div>
     );

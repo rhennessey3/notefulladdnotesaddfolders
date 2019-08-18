@@ -1,5 +1,6 @@
 .add__note{
     margin-left: 40px;
+    font-size: 2em;
 }
 
 .note__list{
@@ -23,12 +24,32 @@
     box-shadow: 0 7px 14px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
 }
 
-h3{
+.note__overview h3{
     font-size: 2em;
 }
 
-h4{
+.note__overview h3:hover, .note__overview button:hover{
+    color: #998071;
+    transition: 0.5s;
+}
+
+.note__overview button{
     font-size: 1.25em;
-    bottom: 10px;
+    bottom: 20px;
     position: absolute;
+    border: none;
+}
+
+.add__note{
+    background-color: #998071;
+    border: none;
+}
+
+.add__note button:hover{
+    color: black;
+    transition: 0.5s;
+}
+
+button{
+    cursor: pointer;
 }

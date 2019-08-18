@@ -12,7 +12,6 @@
 .sidebar a, .sidebar p, .sidebar button{
     display: block;
     padding: 20px 0px 20px 20px;
-    margin: 5px;
     font-size: 1.4em;
     text-decoration: none;
 }
@@ -20,6 +19,8 @@
 .sidebar button{
     background-color: #ffcdbf;
     border: none;
+    width: 100%;
+    text-align: left;
 }
 
 .sidebar a:hover, .sidebar button:hover{

@@ -23,14 +23,17 @@
     margin: 5px 0px 0px 15px;
 }
 
-.popup__form button{
+.popup__form .buttons{
     display: block;
+}
+
+.popup__form button{
     background-color: #ffcdbf;
     border: 1px solid #ffcdbf;
     border-radius: 5px;
     font-size: 1.25em;
     padding: 10px 15px;
-    margin-top: 15px;
+    margin: 15px 15px 0px 0px;
     cursor: pointer;
 }
 

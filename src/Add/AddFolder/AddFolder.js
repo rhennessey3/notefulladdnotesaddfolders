@@ -13,11 +13,13 @@ export default class AddFolder extends React.Component{
             touched: false,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleAddClick = this.handleAddClick.bind(this);
     }
 
     /* posts the folder to the endpoint if there's a valid name*/
     handleSubmit(e){
         e.preventDefault();
+        console.log(e);
         this.setState({
             touched: true,
         })
@@ -28,7 +30,8 @@ export default class AddFolder extends React.Component{
             body: {name: userFolder},
         })
         .then(response => console.log(response.json()))
-        .catch(error => console.log(error))
+        .catch(error => console.log(error));
+        {this.handleAddClick()};
     }
 
     /*make sure user has entered value for folder before submitting */
@@ -46,6 +49,10 @@ export default class AddFolder extends React.Component{
         })
     }
 
+    handleAddClick(){
+        this.props.addClickHandler();
+    }
+
     render(){
         const folderError = this.validateForm();
 
@@ -56,7 +63,10 @@ export default class AddFolder extends React.Component{
                         <input type="text" name="folderName" id="folderName" onChange={e => this.updateFolder(e)}/>
                     </label>
                     {this.state.touched && <ValidationError message={folderError} />}
-                    <button type="submit">Add Folder</button>
+                    <div className="buttons">
+                        <button type="submit">Add Folder</button>
+                        <button onClick={this.handleAddClick}>Cancel</button>
+                    </div>
                 </form>
             </div>
         )
