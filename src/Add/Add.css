@@ -18,7 +18,7 @@
     display: block;
 }
 
-.popup__form input, .popup__form select{
+.popup__form input, .popup__form select, .popup__form textarea{
     font-size: 1em;
     margin: 5px 0px 0px 15px;
 }

@@ -56,10 +56,10 @@ export default class AddNote extends React.Component{
 
         const firstFolder = this.props.selectedFolder 
             ? this.props.allFolders.find(folder => folder.id === this.props.selectedFolder)
-            : this.props.allFolders[0]
+            : this.props.allFolders[0];
         const remainingFolderOptions = this.props.allFolders
             .filter(folder => folder.id !== firstFolder.id)
-            .map(folder => <option key={folder.id}>{folder.name}</option>)
+            .map(folder => <option key={folder.id}>{folder.name}</option>);
 
         return(
             <div className="popup__form">
@@ -70,7 +70,7 @@ export default class AddNote extends React.Component{
                     </label>
                     
                     <label htmlFor="noteContent">Content: 
-                        <input type="textarea" name="noteContent" id="noteContents" onChange={e => this.handleNoteContent(e)} />
+                        <textarea name="noteContent" id="noteContents" onChange={e => this.handleNoteContent(e)} />
                     </label>
 
                     <label htmlFor="folders">Folder: 
