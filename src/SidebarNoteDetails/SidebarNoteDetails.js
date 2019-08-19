@@ -11,7 +11,7 @@ export default class SidebarNoteDetails extends React.Component{
     render(){
         const folderId = this.props.folderId;
         const folderName = this.props.folders.find(folder => folder.id === folderId).name;
-
+        console.log(this.props);
         return(
             <div className="sidebar">
                 <p><FontAwesomeIcon icon={faFolderOpen} />{folderName}</p>

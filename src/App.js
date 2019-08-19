@@ -110,13 +110,14 @@ class App extends React.Component {
                 />} 
         />
         <Route path ="/note/:noteId" 
-               render={ (routerProps) => 
+               render={ (routerProps, history) => 
                <FolderDisplayError>
                   <SidebarNoteDetails 
                       notes={this.state.allNotes} 
                       folders={this.state.allFolders}
                       noteId={routerProps.match.params.noteId}
                       folderId={this.state.selectedFolder}
+                      history={history}
                     />
                 </FolderDisplayError>
                 } 

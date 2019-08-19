@@ -23,11 +23,11 @@ export default class AddFolder extends React.Component{
 
         fetch(config.FOLDER_ENDPOINT, {
             method: 'POST',
-            body: {name: userFolder},
-        })
-        .then(response => console.log(response.json()))
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({name:userFolder}),
+       })
+        .then(() => this.handleAddFolder())
         .catch(error => console.log(error));
-        this.handleAddClick();
     }
 
     /*make sure user has entered value for folder before submitting */
@@ -47,6 +47,10 @@ export default class AddFolder extends React.Component{
 
     handleAddClick(){
         this.props.addClickHandler();
+    }
+
+    handleAddFolder(){
+        this.handleAddClick();
     }
 
     render(){
