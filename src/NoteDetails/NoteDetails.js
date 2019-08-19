@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './NoteDetails.css';
 
@@ -16,3 +17,9 @@ export default class NoteDetails extends React.Component{
         );
     }
 }
+
+
+NoteDetails.propTypes = {
+    notes: PropTypes.array,
+    noteId: PropTypes.string.isRequired
+};

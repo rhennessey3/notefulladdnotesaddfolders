@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import config from '../../config';
 
@@ -130,3 +131,8 @@ export default class AddNote extends React.Component{
         )
     }
 }
+
+AddNote.propTypes = {
+    allFolders: PropTypes.array.isRequired,
+    folderId: PropTypes.string,
+};

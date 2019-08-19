@@ -1,4 +1,3 @@
-/**if note can't be found in that folder */
 import React from 'react';
 
 export default class NoteDisplayError extends React.Component{

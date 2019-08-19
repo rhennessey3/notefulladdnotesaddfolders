@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +12,7 @@ export default class SidebarNoteDetails extends React.Component{
     render(){
         const folderId = this.props.folderId;
         const folderName = this.props.folders.find(folder => folder.id === folderId).name;
-        console.log(this.props);
+
         return(
             <div className="sidebar">
                 <p><FontAwesomeIcon icon={faFolderOpen} />{folderName}</p>
@@ -20,3 +21,8 @@ export default class SidebarNoteDetails extends React.Component{
         )
     }
 }
+
+SidebarNoteDetails.propTypes = {
+    folderId: PropTypes.string.isRequired,
+    folders: PropTypes.array.isRequired
+};

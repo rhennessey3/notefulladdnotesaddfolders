@@ -114,12 +114,10 @@ class App extends React.Component {
                 />} 
         />
         <Route path ="/note/:noteId" 
-               render={ (routerProps, history) => 
+               render={ (history) => 
                <FolderDisplayError>
                   <SidebarNoteDetails 
-                      notes={this.state.allNotes} 
                       folders={this.state.allFolders}
-                      noteId={routerProps.match.params.noteId}
                       folderId={this.state.selectedFolder}
                       history={history}
                     />
@@ -150,7 +148,6 @@ class App extends React.Component {
                   <NoteDetails 
                       notes={this.state.allNotes}
                       noteId={routerProps.match.params.noteId}
-                      deleteHandler={notes => this.setNotes(notes)}
                     />
                 </NoteDisplayError>
                 } 

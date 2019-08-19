@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
@@ -45,3 +46,7 @@ export default class Sidebar extends React.Component{
         );
     }
 }
+
+Sidebar.propTypes = {
+    folders: PropTypes.array
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
@@ -64,3 +65,9 @@ export default class Notes extends React.Component{
         );
     }
 }
+
+
+Notes.propTypes = {
+    notes: PropTypes.array,
+    folderId: PropTypes.string
+};
