@@ -67,6 +67,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData(){
     Promise.all([
         fetch(`${config.NOTE_ENDPOINT}`),
         fetch(`${config.FOLDER_ENDPOINT}`)
@@ -154,12 +158,14 @@ class App extends React.Component {
         {this.state.showAddFolder
           ? <AddFolder 
              addClickHandler={() => this.setFolderAdd()}
+             addFolderHandler={() => this.fetchData()}
             /> 
           : ''}
 
         {this.state.showAddNote
          ? <AddNote
-            addNoteHandler={() => this.setNoteAdd()}
+            addClickHandler={() => this.setNoteAdd()}
+            addNoteHandler={() => this.fetchData()}
             allFolders={this.state.allFolders}
             selectedFolder={this.state.selectedFolder}
            />

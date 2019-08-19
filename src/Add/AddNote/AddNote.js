@@ -21,6 +21,7 @@ export default class AddNote extends React.Component{
     }
 
     handleAddClick(){
+        this.props.addClickHandler();
         this.props.addNoteHandler();
     }
 

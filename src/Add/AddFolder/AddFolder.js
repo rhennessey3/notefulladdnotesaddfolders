@@ -51,6 +51,7 @@ export default class AddFolder extends React.Component{
 
     handleAddFolder(){
         this.handleAddClick();
+        this.props.addFolderHandler();
     }
 
     render(){
