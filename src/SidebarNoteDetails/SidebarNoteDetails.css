@@ -7,3 +7,8 @@
     background-color: lightcoral;
     margin: 0;
 }
+
+p.sidebar__error{
+    background-color: #ffcdbf;
+    padding: 10px;
+}
