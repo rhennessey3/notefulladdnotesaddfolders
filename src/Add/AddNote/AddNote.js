@@ -103,7 +103,7 @@ export default class AddNote extends React.Component{
                     </label>
                     
                     <label htmlFor="noteContent">Content: 
-                        <textarea name="noteContent" id="noteContents" onClick={e => this.handleNoteContent(e)} />
+                        <textarea name="noteContent" id="noteContents" onChange={e => this.handleNoteContent(e)} />
                     </label>
 
                     <label htmlFor="folders">Folder: 
