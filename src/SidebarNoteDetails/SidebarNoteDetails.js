@@ -16,7 +16,7 @@ export default class SidebarNoteDetails extends React.Component{
           folder 
             ? (<div className="sidebar">
                     <p><FontAwesomeIcon icon={faFolderOpen} />{folder.name}</p>
-                    <NavLink id="back__link" to="/"><FontAwesomeIcon icon={faArrowAltCircleLeft} />Go Back</NavLink>
+                    <NavLink id="back__link" to="/" aria-label="back button"><FontAwesomeIcon icon={faArrowAltCircleLeft} />Go Back</NavLink>
                 </div>)
             : (<div className="sidebar">
                 <p className="sidebar__error"> Oops - ran into an error displaying the folders! Click the header to go back home.</p>

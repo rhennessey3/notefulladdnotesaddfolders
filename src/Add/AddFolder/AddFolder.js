@@ -10,6 +10,7 @@ export default class AddFolder extends React.Component{
         this.state = {
             newFolder: "",
         }
+        this.textInput = React.createRef();
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleAddClick = this.handleAddClick.bind(this);
     }
@@ -54,6 +55,10 @@ export default class AddFolder extends React.Component{
         this.props.addFolderHandler();
     }
 
+    componentDidMount(){
+        this.textInput.current.focus(); 
+     }
+
     render(){
         const hasFolderError = this.validateForm() ? true : false;
 
@@ -61,7 +66,14 @@ export default class AddFolder extends React.Component{
             <div className="popup__form" onSubmit={e => this.handleSubmit(e)}>
                 <form className="add__item" id="addFolder">
                     <label htmlFor="folderName">Folder Name*: 
-                        <input type="text" name="folderName" id="folderName" onChange={e => this.updateFolder(e)}/>
+                        <input 
+                          type="text" 
+                          name="folderName" 
+                          id="folderName" 
+                          aria-required="true"
+                          onChange={e => this.updateFolder(e)}
+                          ref={this.textInput}
+                        />
                     </label>
 
                     <div className="buttons">

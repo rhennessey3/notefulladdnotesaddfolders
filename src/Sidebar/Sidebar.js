@@ -29,7 +29,8 @@ export default class Sidebar extends React.Component{
                 <NavLink 
                     key={folder.id} 
                     id={folder.id}
-                    onClick={this.handleFolderClick}                        
+                    onClick={this.handleFolderClick} 
+                    aria-label="folder"                       
                     to={`/folder/${folder.id}`}>
                         <FontAwesomeIcon icon={faFolderOpen}/>
                         {folder.name}

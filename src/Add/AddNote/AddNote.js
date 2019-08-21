@@ -14,6 +14,8 @@ export default class AddNote extends React.Component{
             noteFolder: this.props.selectedFolder ? this.props.selectedFolder : this.props.allFolders[0].id,
             touched: false,
         }
+        this.textInput = React.createRef();
+
         this.handleAddClick = this.handleAddClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleNoteName = this.handleNoteName.bind(this);
@@ -77,6 +79,10 @@ export default class AddNote extends React.Component{
         }
     }
 
+    componentDidMount(){
+        this.textInput.current.focus();
+    }
+
     render(){
         const hasNoteError = this.validateForm() ? true : false;
 
@@ -99,7 +105,14 @@ export default class AddNote extends React.Component{
                 <form className="add__item" id="addNote" onSubmit={e => this.handleSubmit(e)}>
 
                     <label htmlFor="noteName">Note Name*: 
-                        <input type="text" name="noteName" id="noteName" onChange={e => this.handleNoteName(e)}/>
+                        <input 
+                          type="text" 
+                          name="noteName" 
+                          id="noteName" 
+                          aria-required="true"
+                          onChange={e => this.handleNoteName(e)}
+                          ref={this.textInput}
+                        />
                     </label>
                     
                     <label htmlFor="noteContent">Content: 

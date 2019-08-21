@@ -44,7 +44,7 @@ export default class Notes extends React.Component{
             ? this.props.notes.filter(note => note.folderId === this.props.folderId)
             : this.props.notes)
                 .map(note => (<div className="note__overview" key={note.id}>
-                    <NavLink to={`/note/${note.id}`}>
+                    <NavLink to={`/note/${note.id}`} aria-label="note">
                         <h3>{note.name}</h3>
                     </NavLink>
                     <p>Date Modified: {note.modified}</p>
