@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notes renders UI as expected 1`] = `
+<div
+  className="note__container"
+>
+  <div
+    className="note__list"
+  >
+    <div
+      className="note__overview"
+    >
+      <a
+        aria-current={null}
+        aria-label="note"
+        href="/note/d26e0034-ffaf-11e8-8eb2-f2801f1b9fd1"
+        onClick={[Function]}
+      >
+        <h3>
+          Cats
+        </h3>
+      </a>
+      <p>
+        Date Modified: 
+        2018-08-15T23:00:00.000Z
+      </p>
+      <button
+        id="d26e0034-ffaf-11e8-8eb2-f2801f1b9fd1"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-trash-alt fa-w-14 "
+          data-icon="trash-alt"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Delete Note
+      </button>
+    </div>
+    <div
+      className="note__overview"
+    >
+      <a
+        aria-current={null}
+        aria-label="note"
+        href="/note/d26e01a6-ffaf-11e8-8eb2-f2801f1b9fd1"
+        onClick={[Function]}
+      >
+        <h3>
+          Pigs
+        </h3>
+      </a>
+      <p>
+        Date Modified: 
+        2018-03-01T00:00:00.000Z
+      </p>
+      <button
+        id="d26e01a6-ffaf-11e8-8eb2-f2801f1b9fd1"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-trash-alt fa-w-14 "
+          data-icon="trash-alt"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Delete Note
+      </button>
+    </div>
+  </div>
+  <button
+    className="add__note"
+    onClick={[Function]}
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-plus-square fa-w-14 "
+      data-icon="plus-square"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-32 252c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92H92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    Add Note
+  </button>
+</div>
+`;

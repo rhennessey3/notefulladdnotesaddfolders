@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note Details Page renders UI correctly 1`] = `
+<div
+  className="note__details"
+>
+  <h3>
+    Cats
+  </h3>
+  <p>
+    Date Modified: 
+    2018-08-15T23:00:00.000Z
+  </p>
+  <p>
+    Id vitae qui. Et ullam et eos. Suscipit perferendis et dolor non deserunt et et inventore exercitationem. Consequatur nihil ut impedit numquam ducimus. Culpa aut repellat sunt. Quas sapiente modi ea quia qui nihil maiores.
+ 
+Illo enim omnis illum dolorem. Voluptatem sequi pariatur id voluptatem quos. Ratione debitis laboriosam soluta optio. Eum nobis culpa sed quasi commodi sunt nesciunt doloribus accusantium.
+ 
+Quam cum quidem voluptas repudiandae tenetur error aut. Sit et explicabo voluptas dolore eum saepe omnis libero aut. Sit tempore voluptas voluptas ipsa ut explicabo ipsum et. Officiis minima tempora omnis consequatur est facilis eligendi nobis vel. Aliquam sapiente veniam corporis quas est omnis quis dolor dolor. Ut ducimus nobis perspiciatis debitis neque.
+  </p>
+</div>
+`;
