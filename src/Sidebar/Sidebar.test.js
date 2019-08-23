@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
 import Sidebar from './Sidebar';
 
 describe('Main sidebar', () => {
@@ -23,6 +26,12 @@ describe('Main sidebar', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    //how to handle the onclick functions during testing? 
+   /* it('loads dialog add folder window when clicked', () => {
+      const wrapper = shallow(<Sidebar folders={sampleFolders} onClick={handleAddClick} />)
+      wrapper.find('button').at(0).simulate('click');
+   //   expect(toJson(wrapper)).toMatchSnapshot();
+    })*/
 });
 
 const sampleFolders = [

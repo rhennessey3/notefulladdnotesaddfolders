@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Main sidebar loads dialog add folder window when clicked 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <Sidebar
+    folders={
+      Array [
+        Object {
+          "id": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1",
+          "name": "Important",
+        },
+        Object {
+          "id": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
+          "name": "Super",
+        },
+        Object {
+          "id": "b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1",
+          "name": "Spangley",
+        },
+      ]
+    }
+  />
+</Router>
+`;
+
 exports[`Main sidebar renders the UI as expected 1`] = `
 <div
   className="sidebar"
