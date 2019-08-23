@@ -1,3 +1,22 @@
+# Noteful 
+This project lets users manage and organize their notes, which are stored on an external server. 
+
+## Motivation
+Mostly to practice React.
+
+# Server setup
+The project currently requires a local copy of a JSON server to run. To set this up: 
+
+### `git clone https://github.com/tomatau/noteful-json-server`
+### `cd ./noteful-json-server`
+### `npm install`
+### `npm start`
+
+# Live Preview (after server is setup)
+https://noteful.omaiyea.now.sh
+
+# Or setup the app locally (instructions from React)  
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
