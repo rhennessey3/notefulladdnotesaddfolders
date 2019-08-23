@@ -4,6 +4,14 @@ This project lets users manage and organize their notes, which are stored on an 
 ## Motivation
 Mostly to practice React.
 
+## Future Enhancements
+* Currently smoke tests and UI tests are in place. Next step is automtaed tests to cover that the event handlers are working correctly. 
+* Data loaded from sample file so app works without server setup
+* Better formatting on mobile (app is responsive but not optimized for mobile - especially the Add Note / Add Folder windows)
+
+## Built With
+JavaScript, React, CSS
+
 # Server setup
 The project currently requires a local copy of a JSON server to run. To set this up: 
 
