@@ -33,8 +33,8 @@ The project currently requires a local copy of a JSON server to run. To set this
 ### `npm install`
 ### `npm start`
 
-# Preview (after server is setup)
-## Live Link
+# Preview App (after server is setup)
+## Preview with a live link
 https://noteful.omaiyea.now.sh
 ## Or you can preview locally
 ### `git clone https://github.com/omaiyea/noteful`
