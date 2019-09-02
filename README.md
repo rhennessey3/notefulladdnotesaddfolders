@@ -1,8 +1,8 @@
 # Noteful 
-This project lets users manage and organize their notes, which are stored on an external server. 
+Noteful lets users manage and organize their notes, which are stored on an external server. 
 
 ## Motivation
-Mostly to practice developing in React and testing an app.
+This was created to practice developing in React and testing an app.
 
 ## Built With
 JavaScript, React, CSS, Enzyme
