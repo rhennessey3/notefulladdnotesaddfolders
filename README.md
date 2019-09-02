@@ -2,15 +2,28 @@
 This project lets users manage and organize their notes, which are stored on an external server. 
 
 ## Motivation
-Mostly to practice React.
+Mostly to practice React and testing an app.
+
+## Built With
+JavaScript, React, CSS, Enzyme
 
 ## Future Enhancements
-* Currently smoke tests and UI tests are in place. Next step is automtaed tests to cover that the event handlers are working correctly. 
 * Data loaded from sample file so app works without server setup
 * Better formatting on mobile (app is responsive but not optimized for mobile - especially the Add Note / Add Folder windows)
 
-## Built With
-JavaScript, React, CSS
+## Screenshots
+#### View notes within a given folder:
+Note: This is similar to the inital home view, which shows all notes regardless of folder
+<img src="https://github.com/omaiyea/noteful/blob/master/screenshots/notes-view.png?raw=true" alt="notes in folder screenshot">
+
+#### Add a new note:
+<img src="https://github.com/omaiyea/noteful/blob/master/screenshots/add-note.png?raw=true" alt="new note screenshot">
+
+#### View the contents of a note:
+<img src="https://github.com/omaiyea/noteful/blob/master/screenshots/note-details.png?raw=true" alt="note content screenshot">
+
+#### Add a new folder to store notes: 
+<img src="https://github.com/omaiyea/noteful/blob/master/screenshots/add-folder.png?raw=true" alt="new folder screenshot">
 
 # Server setup
 The project currently requires a local copy of a JSON server to run. To set this up: 
