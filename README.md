@@ -7,10 +7,6 @@ This was created to practice both developing in React and testing an app.
 ## Built With
 React, Enzyme, CSS, JavaScript
 
-## Future Enhancements
-* Data loaded from sample file so app works without server setup
-* Better formatting on mobile (app is responsive but not optimized for mobile - especially the Add Note / Add Folder windows)
-
 ## Screenshots
 #### View notes within a given folder:
 Note: This is similar to the inital home view, which shows all notes regardless of folder
@@ -43,3 +39,7 @@ https://noteful.omaiyea.now.sh
 ### `npm start`
 and to run the tests:
 ### `npm test`
+
+## Future Enhancements
+* Data loaded from sample file so app works without server setup
+* Better formatting on mobile (app is responsive but not optimized for mobile - especially the Add Note / Add Folder windows)
