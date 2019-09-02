@@ -5,7 +5,7 @@ Noteful lets users manage and organize their notes, which are stored on an exter
 This was created to practice both developing in React and testing an app.
 
 ## Built With
-JavaScript, React, CSS, Enzyme
+React, Enzyme, CSS, JavaScript
 
 ## Future Enhancements
 * Data loaded from sample file so app works without server setup
