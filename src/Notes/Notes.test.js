@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import { BrowserRouter } from 'react-router-dom';
 import Notes from './Notes';
@@ -19,7 +20,14 @@ describe('Notes', () => {
           .create(<BrowserRouter><Notes notes={sampleNotes} folderId={sampleNotes[0].folderId}/></BrowserRouter>)
           .toJSON();
         expect(tree).toMatchSnapshot();
-    })
+    });
+
+    it('calls onClick event handler on add', () => {
+        const onClick = jest.fn();
+        const wrapper = shallow(<Notes notes={sampleNotes} folderId={sampleNotes[0].folderId} addNoteHandler={onClick}/>);
+        wrapper.find('.add__note').at(0).simulate('click');
+        expect(onClick).toBeCalledWith();
+    });
 })
 
 const sampleNotes = [

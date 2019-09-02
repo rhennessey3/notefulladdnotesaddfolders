@@ -48,7 +48,12 @@ export default class Notes extends React.Component{
                         <h3>{note.name}</h3>
                     </NavLink>
                     <p>Date Modified: {note.modified}</p>
-                    <button id={note.id} onClick={this.deleteNote}><FontAwesomeIcon icon={faTrashAlt} />Delete Note</button>
+                    <button 
+                      id={note.id} 
+                      onClick={this.deleteNote} 
+                      className="delete__note">
+                      <FontAwesomeIcon icon={faTrashAlt} />Delete Note
+                    </button>
                 </div>));
 
         return(
