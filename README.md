@@ -2,7 +2,7 @@
 Noteful lets users manage and organize their notes, which are stored on an external server. 
 
 ## Motivation
-This was created to practice both developing in React and testing an app.
+This was created to practice developing and thinking in React, including unit testing and tying the app to a backend server (see here: https://github.com/omaiyea/noteful-server)
 
 ## Built With
 React, Enzyme, CSS, JavaScript
@@ -22,10 +22,10 @@ Note: This is similar to the inital home view, which shows all notes regardless 
 <img src="https://github.com/omaiyea/noteful/blob/master/screenshots/add-folder.png?raw=true" alt="new folder screenshot">
 
 # Server setup
-The project currently requires a local copy of a JSON server to run. To set this up: 
+The project currently requires a local server to run. To set this up: 
 
-### `git clone https://github.com/tomatau/noteful-json-server`
-### `cd ./noteful-json-server`
+### `git clone https://github.com/omaiyea/noteful-server`
+### `cd ./noteful-server`
 ### `npm install`
 ### `npm start`
 
