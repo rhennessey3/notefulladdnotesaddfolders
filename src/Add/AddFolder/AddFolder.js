@@ -25,7 +25,7 @@ export default class AddFolder extends React.Component{
         fetch(config.FOLDER_ENDPOINT, {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
-            body: JSON.stringify({name:userFolder}),
+            body: JSON.stringify({folder_name:userFolder}),
        })
         .then(() => this.handleAddFolder())
         .catch(error => console.log(error));

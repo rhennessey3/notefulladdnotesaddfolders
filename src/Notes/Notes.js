@@ -25,13 +25,17 @@ export default class Notes extends React.Component{
         })
         .then(res => {
             if (!res.ok){
-                console.log(res.ok);
+                return res.json().then(error => {
+                    throw error
+                })            
             }
-
+        })
+        .then(res => {
             let remainingNotes = this.props.notes;
-            remainingNotes = this.props.notes.filter(note => note.id !== noteId)
+            //need to do != because params are string
+            remainingNotes = this.props.notes.filter(note => note.note_id != noteId)
             this.props.deleteHandler(remainingNotes);
-    })
+        })
         .catch(error => console.error(error))
     }
 
@@ -41,15 +45,15 @@ export default class Notes extends React.Component{
 
     render(){
         const notes = (this.props.folderId
-            ? this.props.notes.filter(note => note.folderId === this.props.folderId)
+            ? this.props.notes.filter(note => note.folder_id == this.props.folderId) //== because URL param is string
             : this.props.notes)
-                .map(note => (<div className="note__overview" key={note.id}>
-                    <NavLink to={`/note/${note.id}`} aria-label="note">
-                        <h3>{note.name}</h3>
+                .map(note => (<div className="note__overview" key={note.note_id}>
+                    <NavLink to={`/notes/${note.note_id}`} aria-label="note">
+                        <h3>{note.note_name}</h3>
                     </NavLink>
-                    <p>Date Modified: {note.modified}</p>
+                    <p>Date Modified: {note.date_modified}</p>
                     <button 
-                      id={note.id} 
+                      id={note.note_id} 
                       onClick={this.deleteNote} 
                       className="delete__note">
                       <FontAwesomeIcon icon={faTrashAlt} />Delete Note

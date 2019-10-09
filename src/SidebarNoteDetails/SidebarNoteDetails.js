@@ -10,12 +10,12 @@ import './SidebarNoteDetails.css';
 
 export default class SidebarNoteDetails extends React.Component{
     render(){
-        const folder = this.props.folders.find(folder => folder.id === this.props.folderId);
+        const folder = this.props.folders.find(folder => folder.folder_id == this.props.folderId);
 
         return(
           folder 
             ? (<div className="sidebar">
-                    <p><FontAwesomeIcon icon={faFolderOpen} />{folder.name}</p>
+                    <p><FontAwesomeIcon icon={faFolderOpen} />{folder.folder_name}</p>
                     <NavLink id="back__link" to="/" aria-label="back button"><FontAwesomeIcon icon={faArrowAltCircleLeft} />Go Back</NavLink>
                 </div>)
             : (<div className="sidebar">

@@ -6,13 +6,13 @@ import './NoteDetails.css';
 export default class NoteDetails extends React.Component{
     render(){
         const note = (this.props.notes
-            .find(note => note.id === this.props.noteId));
+            .find(note => note.note_id == this.props.noteId));
             
         return(
             note 
             ? (<div className="note__details">
-                <h3>{note.name}</h3>
-                <p>Date Modified: {note.modified}</p>
+                <h3>{note.note_name}</h3>
+                <p>Date Modified: {note.date_modified}</p>
                 <p>{note.content}</p>
               </div>)
             : <div>

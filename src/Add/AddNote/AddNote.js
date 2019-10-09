@@ -11,7 +11,7 @@ export default class AddNote extends React.Component{
         this.state = {
             noteName: "",
             noteContent: "",
-            noteFolder: this.props.selectedFolder ? this.props.selectedFolder : this.props.allFolders[0].id,
+            noteFolder: this.props.selectedFolder ? this.props.selectedFolder : this.props.allFolders[0].folder_id,
             touched: false,
         }
         this.textInput = React.createRef();
@@ -44,13 +44,21 @@ export default class AddNote extends React.Component{
 
     handleNoteFolder(e){
         let folderId = this.props.allFolders
-          .find(folder => folder.name === e.target.value)
-          .id;
+          .find(folder => folder.folder_name === e.target.value)
+          .folder_id;
+
+        console.log(folderId);
+
         this.setState({
             touched: true,
             noteFolder: folderId,
         })
-        console.log(this.state.noteFolder);
+    }
+
+    handleInitialFolder(folder){
+        this.setState({
+            noteFolder: folder.folder_id,
+        })
     }
 
     handleSubmit(e){
@@ -61,12 +69,11 @@ export default class AddNote extends React.Component{
         fetch(config.NOTE_ENDPOINT, {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(
-                {name: this.state.noteName,
-                folderId: this.state.noteFolder,
+            body: JSON.stringify({
+                note_name: this.state.noteName,
+                folder_id: this.state.noteFolder,
                 content: this.state.noteContent,
-                modified: new Date(),
-                }),
+            }),
        })
         .then(() => this.handleAddClick())
         .catch(error => console.log(error));
@@ -74,8 +81,12 @@ export default class AddNote extends React.Component{
     
     validateForm(){
         const noteName = this.state.noteName.trim();
+        const noteContent = this.state.noteContent.trim();
         if(noteName.length === 0){
             return 'Please enter a name for your note.';
+        }
+        if(noteContent.length === 0){
+            return 'Please enter content for your note.';
         }
     }
 
@@ -86,20 +97,23 @@ export default class AddNote extends React.Component{
     render(){
         const hasNoteError = this.validateForm() ? true : false;
 
+        //set first folder as selected by default, state handles initially setting it in response
         const firstFolder = this.props.selectedFolder 
-            ? this.props.allFolders.find(folder => folder.id === this.props.selectedFolder)
+            ? this.props.allFolders.find(folder => folder.folder_id == this.props.selectedFolder)
             : this.props.allFolders[0];
+
+
         const remainingFolderOptions = this.props.allFolders
-            .filter(folder => folder.id !== firstFolder.id)
+            .filter(folder => folder.folder_id !== firstFolder.folder_id)
             .map(folder => 
                 <option 
-                 key={folder.id} 
+                 key={folder.folder_id} 
                  name="folder" 
-                 id={folder.id} 
+                 id={folder.folder_id} 
                 >
-                  {folder.name}
+                  {folder.folder_name}
                 </option>);
-    
+            
         return(
             <div className="popup__form">
                 <form className="add__item" id="addNote" onSubmit={e => this.handleSubmit(e)}>
@@ -115,18 +129,21 @@ export default class AddNote extends React.Component{
                         />
                     </label>
                     
-                    <label htmlFor="noteContent">Content: 
-                        <textarea name="noteContent" id="noteContents" onChange={e => this.handleNoteContent(e)} />
+                    <label htmlFor="noteContent">Content*: 
+                        <textarea name="noteContent" 
+                          id="noteContents" 
+                          aria-required="true"
+                          onChange={e => this.handleNoteContent(e)} />
                     </label>
 
                     <label htmlFor="folders">Folder: 
-                        <select name="folders" onClick={e => this.handleNoteFolder(e)}>
+                        <select name="folders" onChange={e => this.handleNoteFolder(e)}>
                             <option 
-                              key={firstFolder.id} 
+                              key={firstFolder.folder_id} 
                               name="folder" 
-                              id={firstFolder.id} 
+                              id={firstFolder.folder_id} 
                              >
-                                {firstFolder.name}
+                                {firstFolder.folder_name}
                             </option>
                             {remainingFolderOptions}
                         </select>

@@ -27,16 +27,15 @@ export default class Sidebar extends React.Component{
         let folderDisplay = this.props.folders
             .map(folder => 
                 <NavLink 
-                    key={folder.id} 
-                    id={folder.id}
+                    key={folder.folder_id} 
+                    id={folder.folder_id}
                     onClick={this.handleFolderClick} 
                     aria-label="folder"                       
-                    to={`/folder/${folder.id}`}>
+                    to={`/folders/${folder.folder_id}`}>
                         <FontAwesomeIcon icon={faFolderOpen}/>
-                        {folder.name}
+                        {folder.folder_name}
                 </NavLink>);
-                
-         return(
+          return(
             <div className="sidebar">
                 {folderDisplay}
                 <button onClick={this.handleAddClick}>

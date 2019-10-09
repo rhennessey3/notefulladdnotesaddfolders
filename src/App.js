@@ -105,7 +105,7 @@ class App extends React.Component {
                   addClickHandler={() => this.setFolderAdd()}
                 />} 
         />
-        <Route path ="/folder" 
+        <Route path ="/folders" 
                render={ () =>
                <Sidebar 
                   folders={this.state.allFolders} 
@@ -113,7 +113,7 @@ class App extends React.Component {
                   addClickHandler={() => this.setFolderAdd()}
                 />} 
         />
-        <Route path ="/note/:noteId" 
+        <Route path ="/notes/:noteId" 
                render={ (history) => 
                <FolderDisplayError>
                   <SidebarNoteDetails 
@@ -133,7 +133,7 @@ class App extends React.Component {
                   addNoteHandler={() => this.setNoteAdd()}
                 />}
         />
-        <Route path="/folder/:folderId" 
+        <Route path="/folders/:folderId" 
                render={ (routerProps) =>
                <Notes 
                   notes={this.state.allNotes}
@@ -142,7 +142,7 @@ class App extends React.Component {
                   addNoteHandler={() => this.setNoteAdd()}
                 />}
         />
-        <Route path="/note/:noteId" 
+        <Route path="/notes/:noteId" 
                render={(routerProps) => 
                 <NoteDisplayError>
                   <NoteDetails 
