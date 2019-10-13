@@ -24,7 +24,7 @@ Note: This is similar to the inital home view, which shows all notes regardless 
 <img src="https://github.com/omaiyea/noteful/blob/master/screenshots/add-folder.png?raw=true" alt="new folder screenshot">
 
 # Preview App 
-https://noteful.omaiyea.now.sh
+https://build.omaiyea.now.sh/
 
 ## Future App Enhancements
 * Better formatting on mobile (app is responsive but not optimized for mobile - especially the Add Note / Add Folder windows)
