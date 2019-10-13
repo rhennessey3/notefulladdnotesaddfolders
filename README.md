@@ -6,6 +6,7 @@ This was created to practice developing and thinking in React, including unit te
 
 ## Built With
 Front end: React, Enzyme, CSS, JavaScript
+
 Back end: Node, Chai, Mocha, Supertest
 
 ## Screenshots
