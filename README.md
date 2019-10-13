@@ -26,5 +26,6 @@ Note: This is similar to the inital home view, which shows all notes regardless 
 # Preview App 
 https://noteful.omaiyea.now.sh
 
-## Future Enhancements
+## Future App Enhancements
 * Better formatting on mobile (app is responsive but not optimized for mobile - especially the Add Note / Add Folder windows)
+* Hook up delete folder endpoint to the app so users can delete folders
