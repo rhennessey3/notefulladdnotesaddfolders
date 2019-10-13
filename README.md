@@ -21,24 +21,8 @@ Note: This is similar to the inital home view, which shows all notes regardless 
 #### Add a new folder to store notes: 
 <img src="https://github.com/omaiyea/noteful/blob/master/screenshots/add-folder.png?raw=true" alt="new folder screenshot">
 
-# Server setup
-The project currently requires a local server to run. To set this up: 
-
-### `git clone https://github.com/omaiyea/noteful-server`
-### `cd ./noteful-server`
-### `npm install`
-### `npm start`
-
-# Preview App (after server is set up)
-## Preview with a live link
+# Preview App 
 https://noteful.omaiyea.now.sh
-## Or you can preview locally
-### `git clone https://github.com/omaiyea/noteful`
-### `cd ./noteful`
-### `npm install`
-### `npm start`
-and to run the tests:
-### `npm test`
 
 ## Future Enhancements
 * Data loaded from sample file so app works without server setup
