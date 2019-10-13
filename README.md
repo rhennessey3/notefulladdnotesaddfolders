@@ -5,7 +5,8 @@ Noteful lets users manage and organize their notes, which are stored on an exter
 This was created to practice developing and thinking in React, including unit testing and tying the app to a backend server (see here: https://github.com/omaiyea/noteful-server)
 
 ## Built With
-React, Enzyme, CSS, JavaScript
+Front end: React, Enzyme, CSS, JavaScript
+Back end: Node, Chai, Mocha, Supertest
 
 ## Screenshots
 #### View notes within a given folder:
@@ -25,5 +26,4 @@ Note: This is similar to the inital home view, which shows all notes regardless 
 https://noteful.omaiyea.now.sh
 
 ## Future Enhancements
-* Data loaded from sample file so app works without server setup
 * Better formatting on mobile (app is responsive but not optimized for mobile - especially the Add Note / Add Folder windows)
