@@ -5,7 +5,7 @@ Noteful lets users manage and organize their notes, which are stored on an exter
 This was created to practice developing and thinking in React, including unit testing and tying the app to a backend server (see here: https://github.com/omaiyea/noteful-server)
 
 ## Built With
-Front end: React, Enzyme, CSS, JavaScript
+Front end: React, Enzyme, CSS
 
 Back end: Node, Chai, Mocha, Supertest
 
